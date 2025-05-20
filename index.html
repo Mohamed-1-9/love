@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .question {
+            text-align: center;
+        }
+        .back {
+            background-color: #2196F3;
+            /* Blue */
+            color: white;
+        }
+        .backb {
+            background-color: #2196F3;
+            /* Blue */
+            color: white;
+        }
+
+
+        .yes {
+            background-color: #4CAF50;
+            /* Green */
+            color: white;
+        }
+
+        .no {
+            background-color: #f44336;
+            /* Red */
+            color: white;
+        }
+
+        .yes:hover {
+            background-color: #45a049;
+        }
+
+        .no:hover {
+            background-color: #e53935;
+        }
+
+        .yes:active {
+            background-color: #388e3c;
+        }
+
+        .no:active {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="question">
+        <h1>Do you Love me ??</h1>
+        <div>
+            <button class="yes">Yes ❤</button>
+            <button class="no"> No 💔</button>
+        </div>
+    </div>
+    <div class="responseg" style="display: none;">
+        <h1 class="response-text">I love you too ❤❤</h1>
+        <button class="back">Back</button>
+
+    </div>
+    <div class="responseb" style="display: none;">
+        <h1 class="response-text">why did you click that button !! 🤬</h1>
+        <button class="backb">Back</button>
+
+    </div>
+    <script>
+        const yesButton = document.querySelector('.yes');
+        const noButton = document.querySelector('.no');
+
+        yesButton.addEventListener('click', () => {
+            document.querySelector('.responseg').style.display = 'block';
+            document.querySelector('.question').style.display = 'none';
+            document.querySelector(".back").addEventListener('click', () => {
+                document.querySelector('.responseg').style.display = 'none';
+                document.querySelector('.question').style.display = 'block';
+            });
+        });
+        noButton.addEventListener("click",()=>{
+            document.querySelector('.responseb').style.display = 'block';
+            document.querySelector('.question').style.display = 'none';
+            document.querySelector(".backb").addEventListener('click', () => {
+                document.querySelector('.responseb').style.display = 'none';
+                document.querySelector('.question').style.display = 'block';
+                
+            });
+        })
+
+
+    </script>
+</body>
+
+</html>
